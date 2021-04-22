@@ -7,7 +7,7 @@ Authors@R: person("Daniel", "Morillo", email = "danivmorillo@gmail.com",
 URL: https://github.com/DaniMori/assertive_extra
 Description: Extra functionalities for the assertive package.
 Depends:
-    R         (>= 3.4.4),
+    R         (>= 4.0.3),
     assertive (>= 0.3.5)
 Imports:
     psych     (>= 1.8.4)
