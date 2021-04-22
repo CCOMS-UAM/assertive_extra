@@ -12,6 +12,7 @@ Depends:
 Imports:
     psych     (>= 1.8.4)
 License: file license.txt
+BugReports: https://github.com/CCOMS-UAM/assertive_extra/issues
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
