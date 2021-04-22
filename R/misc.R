@@ -37,7 +37,7 @@ class_is_one_of <- function(x, classes, .xname = get_name_in_parent(x)) {
 	if (length(classes) == 0L)
 		stop(ERROR_PROVIDE_CLASS)
 
-	ok <- x %>% class %>% is_in(classes) %>% any
+	ok <- any(class(x) %in% classes)
 
 	if (!ok) {
 		return(

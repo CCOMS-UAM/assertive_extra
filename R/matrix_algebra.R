@@ -85,8 +85,8 @@ assert_is_non_negative_definite_matrix <- function(
 
 is_non_negative_definite_matrix <- function(x, .xname = get_name_in_parent(x)) {
 
-	definition_test <- x %>% matrix_definition %>%
-		is_in(MATRIX_DEFINITION[c("positive-definite", "positve-semidefinite")])
+	definition_test <- matrix_definition(x) %in%
+	  MATRIX_DEFINITION[c("positive-definite", "positve-semidefinite")]
 
 	if(!is_identical_to_true(definition_test))
 		return(false(gettext("%s is not a positive matrix.")))
@@ -107,8 +107,8 @@ assert_is_non_positive_definite_matrix <- function(
 
 is_non_positive_definite_matrix <- function(x, .xname = get_name_in_parent(x)) {
 
-	definition_test <- x %>% matrix_definition %>%
-		is_in(MATRIX_DEFINITION[c("negative-definite", "negative-semidefinite")])
+	definition_test <- 	definition_test <- matrix_definition(x) %in%
+		MATRIX_DEFINITION[c("negative-definite", "negative-semidefinite")]
 
 	if(!is_identical_to_true(definition_test))
 		return(false(gettext("%s is not a negative matrix.")))

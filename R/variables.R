@@ -35,7 +35,7 @@ measurement_level_is_one_of <- function(
 
   assert_is_subset(levels, MEASUREMENT_LEVEL)
 
-  if(x %>% get.measurement.level %>% is_in(levels)) return(TRUE)
+  if(get.measurement.level(x9) %in% levels) return(TRUE)
 
   else return(false(
     "The measurement level of %s is not one of %s",
