@@ -60,7 +60,11 @@ is_a_scalar_greater_than_or_equal_to <- function(x, y,
                                                 ) {
   if (!(ok <- assertive.properties::is_scalar(x, .xname = .xname)))
     return(ok)
-  if (!(ok <- is_greater_than_or_equal_to(x, y, .xname, .yname)))
+  if (
+    !(
+      ok <- assertive.numbers::is_greater_than_or_equal_to(x, y, .xname, .yname)
+    )
+  )
     return(ok)
   TRUE
 }
