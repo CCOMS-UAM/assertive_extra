@@ -1,8 +1,11 @@
 assert_is_a_whole_number <- function(
   x, severity = getOption("assertive.severity", "stop")
 ) {
-  assert_engine(is_a_whole_number, x, .xname = get_name_in_parent(x),
-                severity = severity)
+  assertive.base::assert_engine(
+    is_a_whole_number, x,
+    .xname = get_name_in_parent(x),
+    severity = severity
+  )
 }
 
 is_a_whole_number <- function(
@@ -20,7 +23,7 @@ is_a_whole_number <- function(
 assert_is_less_than_or_equal_to <- function(
   x, y, severity = getOption("assertive.severity", "stop")
 ) {
-  assert_engine(is_a_scalar_less_than_or_equal_to, x, y,
+  assertive.base::assert_engine(is_a_scalar_less_than_or_equal_to, x, y,
                 .xname = get_name_in_parent(x), severity = severity)
 }
 
@@ -40,8 +43,11 @@ is_a_scalar_less_than_or_equal_to <- function(
 assert_is_greater_than_or_equal_to <- function(
   x, y, severity = getOption("assertive.severity", "stop")
 ) {
-  assert_engine(is_a_scalar_greater_than_or_equal_to, x, y,
-                .xname = get_name_in_parent(x), severity = severity)
+  assertive.base::assert_engine(
+    is_a_scalar_greater_than_or_equal_to, x, y,
+    .xname = get_name_in_parent(x),
+    severity = severity
+  )
 }
 
 is_a_scalar_greater_than_or_equal_to <- function(
@@ -58,8 +64,11 @@ is_a_scalar_greater_than_or_equal_to <- function(
 assert_is_a_non_negative_integer <- function(
   x, severity = getOption("assertive.severity", "stop")
 ) {
-  assert_engine(is_a_non_negative_integer, x,
-                .xname = get_name_in_parent(x), severity = severity)
+  assertive.base::assert_engine(
+    is_a_non_negative_integer, x,
+    .xname = get_name_in_parent(x),
+    severity = severity
+  )
 }
 
 is_a_non_negative_integer <- function(x, .xname = get_name_in_parent(x)) {
@@ -75,8 +84,11 @@ is_a_non_negative_integer <- function(x, .xname = get_name_in_parent(x)) {
 assert_is_a_non_positive_integer <- function(
   x, severity = getOption("assertive.severity", "stop")
 ) {
-  assert_engine(is_a_non_positive_integer, x,
-                .xname = get_name_in_parent(x), severity = severity)
+  assertive.base::assert_engine(
+    is_a_non_positive_integer, x,
+    .xname = get_name_in_parent(x),
+    severity = severity
+  )
 }
 
 is_a_non_positive_integer <- function(x, .xname = get_name_in_parent(x)) {
@@ -92,8 +104,11 @@ is_a_non_positive_integer <- function(x, .xname = get_name_in_parent(x)) {
 assert_is_a_natural_number <- function(
   x, severity = getOption("assertive.severity", "stop")
 ) {
-  assert_engine(is_a_natural_number, x,
-                .xname = get_name_in_parent(x), severity = severity)
+  assertive.base::assert_engine(
+    is_a_natural_number, x,
+    .xname = get_name_in_parent(x),
+    severity = severity
+  )
 }
 
 #' Title
@@ -119,8 +134,11 @@ is_a_natural_number <- function(x, .xname = get_name_in_parent(x)) {
 assert_is_a_negative_integer <- function(
   x, severity = getOption("assertive.severity", "stop")
 ) {
-  assert_engine(is_a_negative_integer, x,
-                .xname = get_name_in_parent(x), severity = severity)
+  assertive.base::assert_engine(
+    is_a_negative_integer, x,
+    .xname = get_name_in_parent(x),
+    severity = severity
+  )
 }
 
 is_a_negative_integer <- function(x, .xname = get_name_in_parent(x)) {
@@ -136,8 +154,11 @@ is_a_negative_integer <- function(x, .xname = get_name_in_parent(x)) {
 assert_is_a_zero <- function(
   x, severity = getOption("assertive.severity", "stop")
 ) {
-  assert_engine(is_zero, x,
-                .xname = get_name_in_parent(x), severity = severity)
+  assertive.base::assert_engine(
+    is_zero, x,
+    .xname = get_name_in_parent(x),
+    severity = severity
+  )
 }
 
 is_zero <- function(
@@ -155,7 +176,7 @@ assert_all_are_zero <- function(
   .xname <- get_name_in_parent(x)
 
   msg <- gettextf("%s are not all equal to 0 (tol = %g).", .xname, tol)
-  assert_engine(
+  assertive.base::assert_engine(
     is_zero, x, tol = tol, .xname = .xname,
     msg = msg, na_ignore = na_ignore, severity = severity
   )
@@ -168,7 +189,7 @@ assert_any_are_zero <- function(
   .xname <- get_name_in_parent(x)
 
   msg <-  gettextf("%s are never equal to 0 (tol = %g).", .xname, tol)
-  assert_engine(
+  assertive.base::assert_engine(
     is_zero, x, tol = tol, .xname = .xname,
     msg = msg, na_ignore = na_ignore, severity = severity
   )
@@ -179,10 +200,13 @@ assert_is_in_range <- function(
   x, lower, upper, lower_is_strict = FALSE, upper_is_strict = FALSE,
   severity = getOption("assertive.severity", "stop")
 ) {
-  assert_engine(is_a_scalar_in_range, x, lower = lower, upper = upper,
-                lower_is_strict = lower_is_strict,
-                upper_is_strict = upper_is_strict,
-                .xname = get_name_in_parent(x), severity = severity)
+  assertive.base::assert_engine(
+    is_a_scalar_in_range, x, lower = lower, upper = upper,
+    lower_is_strict = lower_is_strict,
+    upper_is_strict = upper_is_strict,
+    .xname = get_name_in_parent(x),
+    severity = severity
+  )
 }
 
 is_a_scalar_in_range <- function(
@@ -209,7 +233,7 @@ assert_none_is_in_range <- function(x, lower, upper,
                                       "assertive.severity",
                                       "stop"
                                     )) {
-  assert_engine(
+  assertive.base::assert_engine(
     is_not_in_range, x,
     lower = lower, upper = upper,
     lower_is_strict = lower_is_strict, upper_is_strict = upper_is_strict,

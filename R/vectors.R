@@ -3,8 +3,11 @@ assert_length_is_equal_to_or_less_than <- function(
   x, len,
   severity = getOption("assertive.severity", "stop")
 ) {
-  assert_engine(length_is_equal_to_or_less_than, x, len = len,
-                .xname = get_name_in_parent(x), severity = severity)
+  assertive.base::assert_engine(
+    length_is_equal_to_or_less_than, x, len = len,
+    .xname = get_name_in_parent(x),
+    severity = severity
+  )
 }
 
 length_is_equal_to_or_less_than <- function(
@@ -25,8 +28,11 @@ assert_length_is_equal_to_or_more_than <- function(
   x, len,
   severity = getOption("assertive.severity", "stop")
 ) {
-  assert_engine(length_is_equal_to_or_more_than, x, len = len,
-                .xname = get_name_in_parent(x), severity = severity)
+  assertive.base::assert_engine(
+    length_is_equal_to_or_more_than, x, len = len,
+    .xname = get_name_in_parent(x),
+    severity = severity
+  )
 }
 
 length_is_equal_to_or_more_than <- function(
@@ -47,8 +53,12 @@ assert_are_different_length <- function (
   x, y,
   severity = getOption("assertive.severity", "stop")
 ) {
-  assert_engine(are_different_length, x, y = y, .xname = get_name_in_parent(x),
-                .yname = get_name_in_parent(y), severity = severity)
+  assertive.base::assert_engine(
+    are_different_length, x, y = y,
+    .xname = get_name_in_parent(x),
+    .yname = get_name_in_parent(y),
+    severity = severity
+  )
 }
 
 are_different_length <- function(
@@ -67,8 +77,11 @@ assert_is_an_index <- function(
   x, severity = getOption("assertive.severity", "stop")
 ) {
 
-  assert_engine(is_an_index, x, .xname = get_name_in_parent(x),
-                severity = severity)
+  assertive.base::assert_engine(
+    is_an_index, x,
+    .xname = get_name_in_parent(x),
+    severity = severity
+  )
 }
 
 is_an_index <- function(x, .xname = get_name_in_parent(x)) {
@@ -97,8 +110,12 @@ assert_is_exactly <- function(
   x, y, severity = getOption("assertive.severity", "stop")
 ) {
 
-  assert_engine(is_exactly, x, y, .xname = get_name_in_parent(x),
-                .yname = get_name_in_parent(y), severity = severity)
+  assertive.base::assert_engine(
+    is_exactly, x, y,
+    .xname = get_name_in_parent(x),
+    .yname = get_name_in_parent(y),
+    severity = severity
+  )
 }
 
 is_exactly <- function(
@@ -116,8 +133,12 @@ assert_have_same_names <- function(
   x, y, severity = getOption("assertive.severity", "stop")
 ) {
 
-  assert_engine(have_same_names, x, y, .xname = get_name_in_parent(x),
-                .yname = get_name_in_parent(y), severity = severity)
+  assertive.base::assert_engine(
+    have_same_names, x, y,
+    .xname = get_name_in_parent(x),
+    .yname = get_name_in_parent(y),
+    severity = severity
+  )
 }
 
 have_same_names <- function(
@@ -137,8 +158,11 @@ assert_all_are_unique <- function(
   severity = getOption("assertive.severity", "stop")
 ) {
 
-  assert_engine(all_are_unique, x, .xname = get_name_in_parent(x),
-                severity = severity)
+  assertive.base::assert_engine(
+    all_are_unique, x,
+    .xname = get_name_in_parent(x),
+    severity = severity
+  )
 }
 
 all_are_unique <- function(x, .xname = get_name_in_parent(x)) {
@@ -164,8 +188,12 @@ assert_is_not_a_na <- function(x, coerce_to_logical = FALSE,
                                  "assertive.severity", "stop"
                                )) {
 
-  assert_engine(is_not_a_na, x, coerce_to_logical = coerce_to_logical,
-                .xname = get_name_in_parent(x), severity = severity)
+  assertive.base::assert_engine(
+    is_not_a_na, x,
+    coerce_to_logical = coerce_to_logical,
+    .xname = get_name_in_parent(x),
+    severity = severity
+  )
 }
 
 is_not_a_na <- function(x, coerce_to_logical = FALSE,

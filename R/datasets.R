@@ -4,7 +4,7 @@ assert_ID_is_not_duplicate <- function(
   x, severity = getOption("assertive.severity", "stop")
 ) {
 
-  assert_engine(
+  assertive.base::assert_engine(
     ID_is_not_duplicate, x, .xname = get_name_in_parent(x), severity = severity
   )
 }

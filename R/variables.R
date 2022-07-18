@@ -4,7 +4,7 @@ assert_measurement_level_is <- function(
   x, level, severity = getOption("assertive.severity", "stop")
 ) {
 
-  assert_engine(
+  assertive.base::assert_engine(
     measurement_level_is, x, level, .xname = get_name_in_parent(x),
     severity = severity
   )
@@ -23,7 +23,7 @@ assert_measurement_level_is_one_of <- function(
   x, levels, severity = getOption("assertive.severity", "stop")
 ) {
 
-  assert_engine(
+  assertive.base::assert_engine(
     measurement_level_is_one_of, x, levels, .xname = get_name_in_parent(x),
     severity = severity
   )

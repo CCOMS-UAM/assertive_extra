@@ -10,7 +10,7 @@ assert_is_correlation_matrix <- function(
   x, severity = getOption("assertive.severity", "stop")
 ) {
 
-	assert_engine(
+  assertive.base::assert_engine(
 	  is_correlation_matrix, x,
 	  .xname = get_name_in_parent(x), severity = severity
 	)
@@ -34,7 +34,7 @@ assert_is_covariance_matrix <- function(
   x, severity = getOption("assertive.severity", "stop")
 ) {
 
-	assert_engine(
+  assertive.base::assert_engine(
 	  is_covariance_matrix, x,
 	  .xname = get_name_in_parent(x), severity = severity
 	)
@@ -55,7 +55,7 @@ assert_is_definite_matrix <- function(
   x, severity = getOption("assertive.severity", "stop")
 ) {
 
-	assert_engine(
+  assertive.base::assert_engine(
 	  is_definite_matrix, x,
 	  .xname = get_name_in_parent(x), severity = severity
 	)
@@ -77,7 +77,7 @@ assert_is_non_negative_definite_matrix <- function(
   x, severity = getOption("assertive.severity", "stop")
 ) {
 
-	assert_engine(
+  assertive.base::assert_engine(
 	  is_non_negative_definite_matrix, x,
 	  .xname = get_name_in_parent(x), severity = severity
 	)
@@ -99,7 +99,7 @@ assert_is_non_positive_definite_matrix <- function(
   x, severity = getOption("assertive.severity", "stop")
 ) {
 
-	assert_engine(
+  assertive.base::assert_engine(
 	  is_non_positive_definite_matrix, x,
 	  .xname = get_name_in_parent(x), severity = severity
 	)

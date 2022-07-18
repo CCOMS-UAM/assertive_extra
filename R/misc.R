@@ -16,7 +16,7 @@ assert_is_of_class <- function(
   x, class, severity = getOption("assertive.severity", "stop")
 ) {
 
-	assert_engine(
+  assertive.base::assert_engine(
 	  is2, x, class, .xname = get_name_in_parent(x), severity = severity
 	)
 }
@@ -26,7 +26,7 @@ assert_class_is_one_of <- function(
   x, classes, severity = getOption("assertive.severity", "stop")
 ) {
 
-	assert_engine(
+  assertive.base::assert_engine(
 	  class_is_one_of, x, classes, .xname = get_name_in_parent(x),
 	  severity = severity
 	)
@@ -57,7 +57,7 @@ assert_are_of_same_class <- function(x, y,
                                        "assertive.severity",
                                        "stop"
                                      )) {
-  assert_engine(
+  assertive.base::assert_engine(
     are_of_same_class, x, y,
     .xname = get_name_in_parent(x), .yname = get_name_in_parent(y),
     severity = severity
@@ -82,7 +82,7 @@ assert_is_a_reactive <- function(
   x, severity = getOption("assertive.severity", "stop")
 ) {
 
-	assert_engine(
+  assertive.base::assert_engine(
 	  is_a_reactive, x, .xname = get_name_in_parent(x), severity = severity
 	)
 }
@@ -100,7 +100,7 @@ assert_is_not_missing <- function(
   severity = getOption("assertive.severity", "stop")
 ) {
 
-	assert_engine(
+  assertive.base::assert_engine(
 	  is_not_missing, x, .xname = get_name_in_parent(x), severity = severity
 	)
 }

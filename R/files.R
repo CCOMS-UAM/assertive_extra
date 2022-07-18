@@ -4,8 +4,11 @@ assert_is_an_existing_file <- function(
   x, severity = getOption("assertive.severity", "stop")
 ) {
 
-  assert_engine(is_an_existing_file, x, .xname = get_name_in_parent(x),
-                severity = severity)
+  assertive.base::assert_engine(
+    is_an_existing_file, x,
+    .xname = get_name_in_parent(x),
+    severity = severity
+  )
 }
 
 is_an_existing_file <- function(x, .xname = get_name_in_parent(x)) {
@@ -22,7 +25,7 @@ assert_is_a_readable_file <- function(
   severity = getOption("assertive.severity", "stop")
 ) {
 
-  assert_engine(
+  assertive.base::assert_engine(
     is_a_readable_file, x,
     warn_about_windows = warn_about_windows, .xname = get_name_in_parent(x),
     severity = severity
@@ -51,7 +54,7 @@ assert_is_a_directory <- function(
   severity = getOption("assertive.severity", "stop")
 ) {
 
-  assert_engine(
+  assertive.base::assert_engine(
     is_a_directory, x, .xname = get_name_in_parent(x), severity = severity
   )
 }
