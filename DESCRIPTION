@@ -1,14 +1,14 @@
 Package: assertive.extra
 Type: Package
 Title: Assertive Package Extension
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: person("Daniel", "Morillo", email = "danivmorillo@gmail.com",
                   role = c("aut", "cre"))
 URL: https://github.com/DaniMori/assertive_extra
 Description: Extra functionalities for the assertive package.
 Depends:
-    R         (>= 4.0.3),
-    assertive (>= 0.3.5)
+    R         (>= 3.6.3),
+    assertive (>= 0.3.6)
 Imports:
     psych     (>= 1.8.4)
 License: file license.txt

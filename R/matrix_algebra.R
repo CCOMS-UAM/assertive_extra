@@ -122,7 +122,7 @@ matrix_definition <- function(matrix) {
 	assert_is_symmetric_matrix(matrix)
 
   ## Main:
-	eigenvalues <- matrix %>% eigen(only.values = TRUE) %>% extract2("values")
+	eigenvalues <- eigen(matrix, only.values = TRUE)$values
 
 	result <- if((eigenvalues > 1) %>% all)
 	  MATRIX_DEFINITION[["positive-definite"]]
