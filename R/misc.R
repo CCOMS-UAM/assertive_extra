@@ -17,7 +17,9 @@ assert_is_of_class <- function(
 ) {
 
   assertive.base::assert_engine(
-	  is2, x, class, .xname = get_name_in_parent(x), severity = severity
+	  is2, x, class,
+	  .xname = assertive.base::get_name_in_parent(x),
+	  severity = severity
 	)
 }
 
@@ -27,12 +29,14 @@ assert_class_is_one_of <- function(
 ) {
 
   assertive.base::assert_engine(
-	  class_is_one_of, x, classes, .xname = get_name_in_parent(x),
+	  class_is_one_of, x, classes,
+	  .xname = assertive.base::get_name_in_parent(x),
 	  severity = severity
 	)
 }
 
-class_is_one_of <- function(x, classes, .xname = get_name_in_parent(x)) {
+class_is_one_of <- function(x, classes,
+                            .xname = assertive.base::get_name_in_parent(x)) {
 
 	if (length(classes) == 0L)
 		stop(ERROR_PROVIDE_CLASS)
@@ -59,14 +63,15 @@ assert_are_of_same_class <- function(x, y,
                                      )) {
   assertive.base::assert_engine(
     are_of_same_class, x, y,
-    .xname = get_name_in_parent(x), .yname = get_name_in_parent(y),
+    .xname = assertive.base::get_name_in_parent(x),
+    .yname = assertive.base::get_name_in_parent(y),
     severity = severity
   )
 }
 
 are_of_same_class <- function(x, y,
-                              .xname = get_name_in_parent(x),
-                              .yname = get_name_in_parent(y)) {
+                              .xname = assertive.base::get_name_in_parent(x),
+                              .yname = assertive.base::get_name_in_parent(y)) {
   ok <- class(x) == class(y)
 
   if (!ok) {
@@ -83,11 +88,13 @@ assert_is_a_reactive <- function(
 ) {
 
   assertive.base::assert_engine(
-	  is_a_reactive, x, .xname = get_name_in_parent(x), severity = severity
+	  is_a_reactive, x,
+	  .xname = assertive.base::get_name_in_parent(x),
+	  severity = severity
 	)
 }
 
-is_a_reactive <- function(x, .xname = get_name_in_parent(x)) {
+is_a_reactive <- function(x, .xname = assertive.base::get_name_in_parent(x)) {
 
 	is2(x, "reactive", .xname)
 }
@@ -96,16 +103,18 @@ is_a_reactive <- function(x, .xname = get_name_in_parent(x)) {
 ## Otras funciones: ------------------------------------------------------------
 
 assert_is_not_missing <- function(
-  x, .xname = get_name_in_parent(x),
+  x, .xname = assertive.base::get_name_in_parent(x),
   severity = getOption("assertive.severity", "stop")
 ) {
 
   assertive.base::assert_engine(
-	  is_not_missing, x, .xname = get_name_in_parent(x), severity = severity
+	  is_not_missing, x,
+	  .xname = assertive.base::get_name_in_parent(x),
+	  severity = severity
 	)
 }
 
-is_not_missing <- function(x, .xname = get_name_in_parent(x)) {
+is_not_missing <- function(x, .xname = assertive.base::get_name_in_parent(x)) {
 
 	if(missing(x)) return(false("argument %s is missing", .xname))
 

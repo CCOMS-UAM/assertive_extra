@@ -12,11 +12,14 @@ assert_is_correlation_matrix <- function(
 
   assertive.base::assert_engine(
 	  is_correlation_matrix, x,
-	  .xname = get_name_in_parent(x), severity = severity
+	  .xname = assertive.base::get_name_in_parent(x),
+	  severity = severity
 	)
 }
 
-is_correlation_matrix <- function(x, .xname = get_name_in_parent(x)) {
+is_correlation_matrix <- function(x,
+                                  .xname = assertive.base::get_name_in_parent(x)
+                                  ) {
 
 	diagonal <- diag(x)
 
@@ -36,11 +39,14 @@ assert_is_covariance_matrix <- function(
 
   assertive.base::assert_engine(
 	  is_covariance_matrix, x,
-	  .xname = get_name_in_parent(x), severity = severity
+	  .xname = assertive.base::get_name_in_parent(x),
+	  severity = severity
 	)
 }
 
-is_covariance_matrix <- function(x, .xname = get_name_in_parent(x)) {
+is_covariance_matrix <- function(x,
+                                 .xname = assertive.base::get_name_in_parent(x)
+                                 ) {
 
 	if (!(ok <- is_symmetric_matrix(x, .xname = .xname)))
 		return(ok)
@@ -57,11 +63,12 @@ assert_is_definite_matrix <- function(
 
   assertive.base::assert_engine(
 	  is_definite_matrix, x,
-	  .xname = get_name_in_parent(x), severity = severity
+	  .xname = assertive.base::get_name_in_parent(x), severity = severity
 	)
 }
 
-is_definite_matrix <- function(x, .xname = get_name_in_parent(x)) {
+is_definite_matrix <- function(x,
+                               .xname = assertive.base::get_name_in_parent(x)) {
 
 	definition_test <- x %>% matrix_definition %>%
 	  magrittr::equals(MATRIX_DEFINITION[["indefinite"]]) %>% not
@@ -79,11 +86,13 @@ assert_is_non_negative_definite_matrix <- function(
 
   assertive.base::assert_engine(
 	  is_non_negative_definite_matrix, x,
-	  .xname = get_name_in_parent(x), severity = severity
+	  .xname = assertive.base::get_name_in_parent(x), severity = severity
 	)
 }
 
-is_non_negative_definite_matrix <- function(x, .xname = get_name_in_parent(x)) {
+is_non_negative_definite_matrix <- function(x,
+                                  .xname = assertive.base::get_name_in_parent(x)
+                                            ) {
 
 	definition_test <- matrix_definition(x) %in%
 	  MATRIX_DEFINITION[c("positive-definite", "positve-semidefinite")]
@@ -101,11 +110,14 @@ assert_is_non_positive_definite_matrix <- function(
 
   assertive.base::assert_engine(
 	  is_non_positive_definite_matrix, x,
-	  .xname = get_name_in_parent(x), severity = severity
+	  .xname = assertive.base::get_name_in_parent(x),
+	  severity = severity
 	)
 }
 
-is_non_positive_definite_matrix <- function(x, .xname = get_name_in_parent(x)) {
+is_non_positive_definite_matrix <- function(x,
+                                  .xname = assertive.base::get_name_in_parent(x)
+                                            ) {
 
 	definition_test <- 	definition_test <- matrix_definition(x) %in%
 		MATRIX_DEFINITION[c("negative-definite", "negative-semidefinite")]

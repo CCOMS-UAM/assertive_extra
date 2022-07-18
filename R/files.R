@@ -6,12 +6,14 @@ assert_is_an_existing_file <- function(
 
   assertive.base::assert_engine(
     is_an_existing_file, x,
-    .xname = get_name_in_parent(x),
+    .xname = assertive.base::get_name_in_parent(x),
     severity = severity
   )
 }
 
-is_an_existing_file <- function(x, .xname = get_name_in_parent(x)) {
+is_an_existing_file <- function(x,
+                                .xname = assertive.base::get_name_in_parent(x)
+                                ) {
 
   if (!(ok <- is_existing_file(x, .xname)))
     return(ok)
@@ -27,13 +29,15 @@ assert_is_a_readable_file <- function(
 
   assertive.base::assert_engine(
     is_a_readable_file, x,
-    warn_about_windows = warn_about_windows, .xname = get_name_in_parent(x),
+    warn_about_windows = warn_about_windows,
+    .xname = assertive.base::get_name_in_parent(x),
     severity = severity
   )
 }
 
 is_a_readable_file <- function(
-  x, warn_about_windows = warn_about_windows, .xname = get_name_in_parent(x)
+  x, warn_about_windows = warn_about_windows,
+  .xname = assertive.base::get_name_in_parent(x)
 ) {
 
   if (!(ok <- is_scalar(x, .xname = .xname)))
@@ -55,11 +59,13 @@ assert_is_a_directory <- function(
 ) {
 
   assertive.base::assert_engine(
-    is_a_directory, x, .xname = get_name_in_parent(x), severity = severity
+    is_a_directory, x,
+    .xname = assertive.base::get_name_in_parent(x),
+    severity = severity
   )
 }
 
-is_a_directory <- function(x, .xname = get_name_in_parent(x)) {
+is_a_directory <- function(x, .xname = assertive.base::get_name_in_parent(x)) {
 
   if (!(ok <- is_dir(x, .xname)))
     return(ok)
