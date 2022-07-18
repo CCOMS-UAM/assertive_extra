@@ -12,7 +12,7 @@ is_a_whole_number <- function(x,
                               tol = 100 * .Machine$double.eps,
                               .xname = assertive.base::get_name_in_parent(x)) {
 
-  if (!(ok <- is_scalar(x, .xname = .xname)))
+  if (!(ok <- assertive.properties::is_scalar(x, .xname = .xname)))
     return(ok)
   if (!(ok <- is_whole_number(x, tol = tol, .xname = .xname)))
     return(ok)
@@ -36,7 +36,7 @@ is_a_scalar_less_than_or_equal_to <- function(x, y,
                                              ) {
   assert_is_a_number(y)
 
-  if (!(ok <- is_scalar(x, .xname = .xname)))
+  if (!(ok <- assertive.properties::is_scalar(x, .xname = .xname)))
     return(ok)
   if (!(ok <- is_less_than_or_equal_to(x, y, .xname, .yname)))
     return(ok)
@@ -58,7 +58,7 @@ is_a_scalar_greater_than_or_equal_to <- function(x, y,
                                  .xname = assertive.base::get_name_in_parent(x),
                                  .yname = assertive.base::get_name_in_parent(y)
                                                 ) {
-  if (!(ok <- is_scalar(x, .xname = .xname)))
+  if (!(ok <- assertive.properties::is_scalar(x, .xname = .xname)))
     return(ok)
   if (!(ok <- is_greater_than_or_equal_to(x, y, .xname, .yname)))
     return(ok)
@@ -227,7 +227,7 @@ is_a_scalar_in_range <- function(
   lower_is_strict = FALSE, upper_is_strict = FALSE,
   .xname = assertive.base::get_name_in_parent(x)
 ) {
-  if (!(ok <- is_scalar(x, .xname = .xname)))
+  if (!(ok <- assertive.properties::is_scalar(x, .xname = .xname)))
     return(ok)
   if (!(ok <- is_in_range(
     x, lower = lower, upper = upper,

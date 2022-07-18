@@ -17,7 +17,7 @@ is_an_existing_file <- function(x,
 
   if (!(ok <- is_existing_file(x, .xname)))
     return(ok)
-  if (!(ok <- is_scalar(x, .xname = .xname)))
+  if (!(ok <- assertive.properties::is_scalar(x, .xname = .xname)))
     return(ok)
   TRUE
 }
@@ -40,7 +40,7 @@ is_a_readable_file <- function(
   .xname = assertive.base::get_name_in_parent(x)
 ) {
 
-  if (!(ok <- is_scalar(x, .xname = .xname)))
+  if (!(ok <- assertive.properties::is_scalar(x, .xname = .xname)))
     return(ok)
   if (
     !(
@@ -69,7 +69,7 @@ is_a_directory <- function(x, .xname = assertive.base::get_name_in_parent(x)) {
 
   if (!(ok <- is_dir(x, .xname)))
     return(ok)
-  if (!(ok <- is_scalar(x, .xname = .xname)))
+  if (!(ok <- assertive.properties::is_scalar(x, .xname = .xname)))
     return(ok)
   TRUE
 }

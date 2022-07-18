@@ -204,7 +204,7 @@ assert_is_not_a_na <- function(x, coerce_to_logical = FALSE,
 is_not_a_na <- function(x, coerce_to_logical = FALSE,
                         .xname = assertive.base::get_name_in_parent(x)) {
 
-  if (!is_scalar(x, .xname = .xname)) return(TRUE)
+  if (!assertive.properties::is_scalar(x, .xname = .xname)) return(TRUE)
 
   if (!(ok <- is_not_na(x, coerce_to_logical = coerce_to_logical,
                         .xname = .xname)))
