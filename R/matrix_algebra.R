@@ -97,7 +97,7 @@ is_non_negative_definite_matrix <- function(x,
 	definition_test <- matrix_definition(x) %in%
 	  MATRIX_DEFINITION[c("positive-definite", "positve-semidefinite")]
 
-	if(!is_identical_to_true(definition_test))
+	if(!assertive.base::is_identical_to_true(definition_test))
 		return(false(gettext("%s is not a positive matrix.")))
 
 	return(TRUE)
@@ -131,7 +131,7 @@ is_non_positive_definite_matrix <- function(x,
 
 matrix_definition <- function(matrix) {
   ## Argument checking:
-	assert_is_symmetric_matrix(matrix)
+	assertive.matrices::assert_is_symmetric_matrix(matrix)
 
   ## Main:
 	eigenvalues <- eigen(matrix, only.values = TRUE)$values
