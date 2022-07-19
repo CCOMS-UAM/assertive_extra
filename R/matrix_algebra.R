@@ -131,7 +131,7 @@ is_non_positive_definite_matrix <- function(x,
 
 matrix_definition <- function(matrix) {
   ## Argument checking:
-	assert_is_symmetric_matrix(matrix)
+	assertive.matrices::assert_is_symmetric_matrix(matrix)
 
   ## Main:
 	eigenvalues <- eigen(matrix, only.values = TRUE)$values
