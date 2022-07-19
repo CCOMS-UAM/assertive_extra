@@ -48,7 +48,7 @@ is_covariance_matrix <- function(x,
                                  .xname = assertive.base::get_name_in_parent(x)
                                  ) {
 
-	if (!(ok <- is_symmetric_matrix(x, .xname = .xname)))
+	if (!(ok <- assertive.matrices::is_symmetric_matrix(x, .xname = .xname)))
 		return(ok)
 	if (!(ok <- is_non_negative_definite_matrix(x, .xname = .xname)))
 		return(ok)
