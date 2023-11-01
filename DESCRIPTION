@@ -1,16 +1,17 @@
 Package: assertive.extra
 Type: Package
 Title: Assertive Package Extension
-Version: 0.0.0.9007
+Version: 0.0.0.9008
 Authors@R: person("Daniel", "Morillo", email = "danivmorillo@gmail.com",
                   role = c("aut", "cre"))
 URL: https://github.com/DaniMori/assertive_extra
 Description: Extra functionalities for the assertive package.
 Depends:
-    R         (>= 3.6.3),
-    assertive (>= 0.3.6)
+    R                 (>= 3.6.3),
+    assertive.base    (>= 0.0-9),
+    assertive.numbers (>= 0.0-2)
 Imports:
-    psych     (>= 1.8.4)
+    psych             (>= 2.3.9)
 License: file license.txt
 BugReports: https://github.com/CCOMS-UAM/assertive_extra/issues
 Encoding: UTF-8
